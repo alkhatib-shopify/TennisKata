@@ -49,6 +49,25 @@ class TennisGame1:
         return result
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class TennisGame2:
     def __init__(self, player1Name, player2Name):
         self.player1Name = player1Name
@@ -146,6 +165,14 @@ class TennisGame2:
     
     def P2Score(self):
         self.p2points +=1
+        
+
+
+
+
+
+
+
         
 class TennisGame3:
     def __init__(self, player1Name, player2Name):
