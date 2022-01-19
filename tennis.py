@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# PIP Standard for naming
+# score dictionary has some repeated elements
+# Typing for the code
+# Long function
+# Naming Conditions of the if statement
 
 class TennisGame1:
 
@@ -14,16 +19,22 @@ class TennisGame1:
         else:
             self.p2points += 1
     
+    def game_tied(self):
+      return self.p1points == self.p2points
+    
+    def advantage_or_win(self):
+      return self.p1points>=4 or self.p2points>=4
+        
+
     def score(self):
         result = ""
-        tempScore=0
-        if (self.p1points==self.p2points):
+        if self.game_tied():
             result = {
                 0 : "Love-All",
                 1 : "Fifteen-All",
                 2 : "Thirty-All",
             }.get(self.p1points, "Deuce")
-        elif (self.p1points>=4 or self.p2points>=4):
+        elif self.advantage_or_win():
             minusResult = self.p1points-self.p2points
             if (minusResult==1):
                 result ="Advantage " + self.player1Name
@@ -34,6 +45,7 @@ class TennisGame1:
             else:
                 result ="Win for " + self.player2Name
         else:
+            tempScore=0
             for i in range(1,3):
                 if (i==1):
                     tempScore = self.p1points
