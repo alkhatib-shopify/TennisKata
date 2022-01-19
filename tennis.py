@@ -4,7 +4,8 @@
 # Typing for the code
 # Long function
 # Naming Conditions of the if statement
-
+# using f-strings improves readability
+# instead of building a result variable return the f-string
 class TennisGame1:
 
     def __init__(self, player1Name, player2Name):
@@ -37,15 +38,14 @@ class TennisGame1:
         elif self.advantage_or_win():
             minusResult = self.p1points-self.p2points
             if (minusResult==1):
-                result ="Advantage " + self.player1Name
+                result = f"Advantage {self.player1Name}"
             elif (minusResult ==-1):
-                result ="Advantage " + self.player2Name
+                result = f"Advantage {self.player2Name}"
             elif (minusResult>=2):
-                result = "Win for " + self.player1Name
+                result = f"Win for {self.player1Name}"
             else:
-                result ="Win for " + self.player2Name
+                result = f"Win for {self.player2Name}"
         else:
-            tempScore=0
             for i in range(1,3):
                 if (i==1):
                     tempScore = self.p1points
